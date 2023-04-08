@@ -19,4 +19,5 @@ def writing():
             if input("Shall we stop? Y/N").upper() == "Y":
                 break
 #.strip()
-writing()
+#writing()
+reading()
