@@ -22,8 +22,8 @@ def run():
     for observation in observe:
         data = (observation, observe.count(observation))
         obser.add(data)
-    sorted(obser)
-    for data in obser:
+    print("Observations: ")
+    for data in sorted(obser):
         print(f"{data[0]} observed {data[1]} times")
 
 run()
