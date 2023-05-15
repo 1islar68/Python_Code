@@ -4,28 +4,31 @@ from robot import Robot
 class Planet:
 
     def __init__(self):
-        self.humans = []
-        self.robots = []
+        self.inhabitants = {"Humans":[], "Robots":[]}
+        # self.humans = []
+        # self.robots = []
 
     def __str__(self):
-        return f"This planet contains\nhumans: {self.humans}\nrobots:{self.robots}"
+        return f"This planet contains\nhumans: {self.inhabitants['Humans']}\nrobots:{self.inhabitants['Robots']}"
 
     def __repr__(self):
-        return f"Planet(humans = {self.humans}, robots = {self.robots})"
+        return f"Planet(humans = {self.inhabitants['Humans']}, robots = {self.inhabitants['Robots']})"
 
-    def add_human(self, hum):
-        self.humans.append(hum)
+    def add(self, inh):
+        if isinstance(inh, Human):
+            self.inhabitants["Humans"].append(inh)
+        elif isinstance(inh, Robot):
+            self.inhabitants["Robots"].append(inh)
 
-    def remove_human(self, hum):
-        if hum in self.humans:
-            self.humans.remove(hum)
 
-    def add_robot(self, rob):
-        self.robots.append(rob)
-
-    def remove_robot(self, rob):
-        if rob in self.humans:
-            self.humans.remove(rob)
+    def remove(self, inh):
+        if isinstance(inh, Human):
+            if inh in self.inhabitants["Humans"]:
+                self.inhabitants["Humans"].remove(inh)
+        elif isinstance(inh, Robot):
+            if inh in self.inhabitants["Humans"]:
+                self.inhabitants["Robots"].remove(inh)
+            self.inhabitants["Robots"].remove(inh)
 
 
 if __name__ == "__main__":
