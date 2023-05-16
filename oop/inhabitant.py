@@ -1,4 +1,6 @@
-class Inhabitant():
+from abc import ABC
+
+class Inhabitant(ABC):
 
     MAX_ENERGY = 100
 
@@ -23,3 +25,8 @@ class Inhabitant():
         self.energy -= distance
         if self.energy < 0:
             self.energy = 0
+
+if __name__ == "__main__":
+    jack = Inhabitant()
+    jack.eat(2)
+    print(jack)
