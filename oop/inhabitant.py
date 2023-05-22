@@ -30,3 +30,4 @@ if __name__ == "__main__":
     jack = Inhabitant()
     jack.eat(2)
     print(jack)
+    jack.display()
