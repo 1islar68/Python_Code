@@ -6,7 +6,7 @@ import random
 fig, ax = plt.subplots(1,1)
 
 def animate(f):
-    ax.cla()
+    ax.cla()        #clearing the axis
     ax.set_xlim(0,10)
     ax.set_ylim(0,100)
     colors = ["r", "b", "y", "g", ]
